@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html dir="rtl" ng-app="Quotes" ng-controller="AppCtrl">
+<head>
+    <title ng-bind="title"></title>
+    <link rel="stylesheet" href="assets/stylesheets/main.css"/>
+</head>
+
+<body>
+
+<header>
+    <h1>{{greeting}}</h1>
+</header>
+
+
+<section class="addQuote">
+        <fieldset>
+            <legend> משהו להוסיף ? </legend>
+            <input type="text" ng-model="newQuote.source" placeholder="מקור"/>
+            <textarea ng-model="newQuote.text" placeholder="הציטוט">  </textarea>
+            <button ng-click='addQuote()'>הוסף</button>
+        </fieldset>
+
+        <ul dir="auto">
+            <li ng-repeat='(field, errors) in errors'>{{field}} : {{errors}}</li>
+        </ul>
+</section>
+
+<section>
+    <input type="text" ng-model='search' placeholder="חיפוש"/>
+    <input type="text" ng-model='sourceSearch' placeholder="חיפוש לפי מקור"/>
+
+    <ul>
+        <li dir="auto" ng-repeat="quote in quotes | filter:search | filter:{source:sourceSearch } | orderBy:'source'">
+            <p>{{quote.text}}</p>
+            <p>{{quote.source}}</p>
+        </li>
+    </ul>
+</section>
+
+<script type="text/javascript" src="assets/lib/angular-1.2.0-rc.2/angular.js"></script>
+<script type="text/javascript" src="assets/javascripts/app.js"></script>
+</body>
+</html>

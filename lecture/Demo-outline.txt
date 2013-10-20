@@ -1,0 +1,26 @@
+Goal : 
+A quotes app that displays quotes and supports adding a new quote.
+
+Steps: 
+1. Define goal as an API - 
+		a. Retrieve the site main page
+		b. Return quotes stored in the DB.
+		c. Add a quote.
+
+2. Implement the main page :  
+		a. Create a page that just displays an appropriate title, using AngularJS.
+		b. Add quote displaying capabillity.
+		c. Add filtering and sorting on the quotes. 
+
+3. Add server support for returnnig stored quotes.
+		a. Create a Model class that represents quotes.
+		b. Create a DB table in which quotes are stored, and initialize with starting data.    		
+		c. Have the appropriate controller method query return the stored querys.
+
+4. Have the client support querying the server.
+
+5. Add server support for adding a quote. 
+
+6. Add client support for adding a quote. 
+	a. Create the relevant HTML elements for adding a new quote.
+	b. Add the required behaviour.
